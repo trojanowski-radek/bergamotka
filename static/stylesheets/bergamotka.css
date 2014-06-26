@@ -1,0 +1,468 @@
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+div.c-wrapper{
+    width: 80%; /* for example */
+    margin: auto;
+}
+
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img{
+    width: 100%;
+    /*max-width: 70%;
+    max-height: 70%;*/
+    margin: auto;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+}
+
+.tab-pane {
+    margin-top: 20px;
+}
+
+.alert {
+    overflow: hidden;
+}
+
+h1,h2,h3,h4 {
+    font-family: 'Lobster', Georgia, Times, serif;
+}
+
+.jumbotron {
+    background-color: #D0FF40;
+}
+
+.fb-like {
+    margin-top: 20px;
+}
+
+/* Paragraph & Typographic */
+p {
+    line-height: 28px;
+    margin-bottom: 25px;
+}
+
+.centered {
+    text-align: center;
+}
+
+/* Links */
+a {
+    /*color: #f85c37;*/
+    word-wrap: break-word;
+
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+a:hover,
+a:focus {
+    color: #7b7b7b;
+    text-decoration: none;
+    outline: 0;
+}
+
+a:before,
+a:after {
+    -webkit-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -moz-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -ms-transition: color 0.1s ease-in, background 0.1s ease-in;
+    -o-transition: color 0.1s ease-in, background 0.1s ease-in;
+    transition: color 0.1s ease-in, background 0.1s ease-in;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.navbar {
+	font-weight: 600;
+	font-size: medium;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.navbar-inverse {
+	background: #2d2d2d;
+	border-color: #2d2d2d;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+	background: indianred;
+}
+
+.navbar-inverse .navbar-brand {
+	color: #ffffff;
+	font-weight: bolder;
+	font-size: 24px;
+	letter-spacing: 1px;
+    margin-right: 20px;
+}
+
+.navbar-nav li a {
+    color: #ffffff!important;
+}
+
+body, label {
+    font-family: 'PT Sans', sans-serif;
+}
+
+label {
+    font-size: larger;
+}
+
+.admin-panel, .calendar-panel, .gallery-panel, .dishes-panel {
+    margin-top: 25px;
+}
+
+.gallery-panel {
+    margin-bottom: 30px;
+    padding: 20px 0px 0px 0px;
+}
+
+.admin-panel .nav-tabs > li > a:hover {
+    font-family: 'PT Sans', sans-serif;
+    color: #ffffff!important;
+    background-color: indianred;
+}
+
+.admin-panel .nav-tabs > li.active > a {
+    color: indianred;
+    font-size: large;
+    font-weight: 600;
+}
+
+.navbar > .container .navbar-brand {
+    margin-left: 0 !important;
+}
+
+.navbar-inverse .navbar-nav > .active > a,
+.navbar-inverse .navbar-nav > .active > a:hover,
+.navbar-inverse .navbar-nav > .active > a:focus {
+    background-color: #FF31A3;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover,
+.navbar-inverse .navbar-nav > li > a:focus {
+    background-color: indianred;
+}
+
+.navbar-inverse .navbar-header > a:hover,
+.navbar-inverse .navbar-header > a:focus {
+    color: indianred;
+}
+
+.navbar-inverse a,
+.navbar-inverse a {
+    cursor: pointer;
+}
+
+#wrap > .jumbotron {
+    padding-top: 0px!important;
+    padding-bottom: 0px!important;
+    margin-bottom: 0px!important;
+}
+
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+#wrap {
+    /* Stretch main content when is smaller than 100% */
+    /* min-height: 100%; */
+    height: auto !important;
+    /* Negative indent footer by it's height */
+    margin: 0 auto -50px;
+}
+
+#wrap {
+    /*background: url(../images/polaroid.png) repeat center center scroll;*/
+    background-color: #D0FF40;
+}
+
+/* Set the fixed height of the footer here */
+#push, #footer {
+    height: auto;
+    color: black;
+}
+
+#footer {
+
+    background-color: #A1A19C;
+    padding: 10px;
+
+
+/*box-shadow: inset 4px 30px 25px white;
+    -moz-box-shadow: inset 0 0 25px white;
+    -webkit-box-shadow: inset 0 0 25px white;
+    box-shadow: inset 0 0 25px white;*/
+}
+
+#push {
+    margin-top: 50px;
+}
+
+/* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 767px) {
+    #footer {
+      margin-left: -20px;
+      margin-right: -20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+}
+
+@media (min-width: 1050px) {
+    #toolbar-login, #toolbar-logout, #toolbar-admin {
+        font-style: normal;
+        text-shadow: none;
+        padding-right: 5px;
+        padding-left: 5px;
+    }
+    #toolbar-login, #toolbar-logout {
+        background-color: green;
+    }
+    #toolbar-admin {
+        background-color: orange;
+    }
+    #toolbar-login:hover, #toolbar-logout:hover, #toolbar-admin:hover {
+        color: white!important;
+        background-color: indianred;
+    }
+    #toolbar-login, #toolbar-admin {
+        margin-left: 15px;
+    }
+}
+
+/*Navbar collapsing point*/
+
+@media (max-width: 1050px) {
+    .navbar-header {
+        float: none;
+    }
+    .navbar-left,.navbar-right {
+        float: none !important;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+    .navbar-collapse {
+        border-top: 1px solid transparent;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
+    }
+    .navbar-fixed-top {
+		top: 0;
+		border-width: 0 0 1px;
+	}
+    .navbar-collapse.collapse {
+        display: none!important;
+    }
+    .navbar-nav {
+        float: none!important;
+		margin-top: 8px;
+	}
+	.navbar-nav>li {
+        float: none;
+    }
+    .navbar-nav>li>a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .collapse.in{
+  		display:block !important;
+	}
+}
+
+/*@media (min-width: 1050px) and (max-width: 1235px) {
+    .navbar-inverse .navbar-header {
+        display: none;
+    }
+}*/
+
+#news-image-url-placeholder, #dishes-image-url-placeholder, #dishes-edit-image-url-placeholder, #dishes-edit-item-id, #news-edit-image-url-placeholder, #news-edit-item-id, #reservations-edit-item-id {
+    display: none;
+}
+
+.popover {
+    max-width: 500px;
+    max-height: 500px;
+    padding-bottom: 10px;
+}
+
+p {
+    font-size: 20px;
+    line-height: 1.6em;
+    margin-bottom: 1.6em;
+}
+
+#about-map {
+    border:0;
+    padding: 10px;
+    width:100%;
+    height:500px;
+}
+
+#about-author {
+    margin-top: 30px;
+}
+
+#footer p {
+    margin-bottom: 15px;
+}
+
+.container-shadow {
+    box-shadow: 0 4px 30px 6px rgba(0, 0, 0, 0.15);
+    background-color: #f5f5f5;
+}
+
+.news-image-container {
+    padding: 0px;
+    margin: 0px;
+}
+
+.news-row {
+    border: none;
+    border-radius: 0px;
+}
+
+.modal .news-image {
+    max-width: 500px;
+    margin: 25px;
+}
+
+.news-cell {
+    padding: 30px 65px 30px 65px;
+    background-color: #f5f5f5;
+}
+
+.gallery-arrow-hide {
+	width: 0;
+	height: 0;
+	border-left: 50px solid transparent;
+	border-right: 50px solid transparent;
+	border-top: 25px solid #000000;
+}
+
+.news-cell h1 {
+    text-align: center;
+}
+
+.news-cell .text-left {
+    text-align: right;
+    font-size: 16px;
+}
+
+.news-cell img {
+    height: 100%;
+    width: 100%;
+}
+
+#main-content {
+    margin: 20px;
+}
+
+.loading-indication {
+    width: 42px;
+    height: 42px;
+    background-image: url("../images/ajax-loader.gif");
+}
+
+.ajax-loading {
+    display: none;
+}
+
+#jumbotron-reservation {
+    background: #A1A19C none;
+    border-color: #A1A19C;
+    border-radius: 0px;
+}
+
+.news-event {
+    margin:20px;
+    background-color: #d3d3d3
+}
+
+.jumbotron h1 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.navbar-inverse .navbar-nav>.active>a, #jumbotron-reservation {
+    box-shadow: none!important;
+}
+
+#admin-tabs {
+    padding: 10px;
+}
+
+#fb-plugin {
+    background: url("../images/fb.png") no-repeat scroll left center transparent !important;
+    float: right;
+    height: 290px;
+    padding: 0 5px 0 46px;
+    width: 290px;
+    z-index:  99999;
+    position:fixed;
+    right:-245px;
+    top:20%;
+}
+
+#fb-plugin div {
+    padding: 0;
+    margin-right:-8px;
+    border:4px solid  #3b5998;
+    background:#fafafa;
+}
+
+#fb-plugin span {
+    bottom: 4px;
+    font: 8px "lucida grande",tahoma,verdana,arial,sans-serif;
+    position: absolute;
+    right: 6px;
+    text-align: right;
+    z-index: 99999;
+}
+
+#fb-plugin span a {
+    color: gray;
+    text-decoration:none;
+}
+
+#fb-plugin span a:hover {
+    text-decoration:underline;
+}
+
+/* Cookie warning */
+#cookie-warn{
+    position: fixed;
+    bottom: 0;
+    background: #EEE;
+    padding: 15px;
+    display: none;
+    z-index: 99;
+}
+
+#cookie-warn a{
+    color: #D66E1A;
+    text-transform: uppercase;
+}
+
+#cookie-warn p{
+    font-size: 12px;
+    color: #333;
+}

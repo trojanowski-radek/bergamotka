@@ -1,0 +1,67 @@
+<footer id="footer">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-4">
+                <h3>Spółdzielnia Socjalna "Bergamotka"</h3>
+                <p>39-200 Dębica, ul.Słowackiego 8</p>
+            </div>
+
+            <div class="col-lg-3 col-lg-offset-1">
+                <p>
+                    <span class="glyphicon glyphicon-phone-alt"> 506-338-510</span><br>
+                    <span class="glyphicon glyphicon-phone-alt"> 730-013-307</span><br>
+                    <span class="glyphicon glyphicon-phone-alt"> 730-033-300</span>
+                </p>
+            </div>
+
+            <div class="col-lg-3 col-lg-offset-1">
+                <p>
+                    <span>NIP 8722408766</span><br>
+                    <span>REGON 181080033</span><br>
+                    <span>KRS 0000500628</span>
+                </p>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2">
+                <h3>Nasi partnerzy:</h3>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-2 col-xs-4">
+                <img src="../static/images/partners/pup.jpg" alt="Powiatowy Urząd Pracy w Dębicy">
+            </div>
+            <div class="col-lg-2 col-xs-4">
+                <img src="../static/images/partners/razem.jpg" alt="Stowarzyszenie 'Razem zdziałamy więcej'">
+            </div>
+        </div>
+
+        <div id="about-author" class="row">
+            <div class="col-lg-8">
+                <span class='glyphicon glyphicon-copyright-mark'></span> Copyright 2014, <a href='mailto:trojanowski.radek@gmail.com'><span style='font-weight: bold;'>Radoslaw Trojanowski.</span></a> Wszystkie prawa zastrzeżone.
+            </div>
+            <div class="col-lg-4">
+                <span tal:condition="logged_in" class="pull-right">
+                    <span class="label label-default" tal:content="logged_in"></span>
+                </span>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4 col-xs-8 col-xs-offset-2 col-md-8 col-md-offset-2" id="cookie-warn">
+                <p>
+                    <strong>UWAGA!</strong> Niniejsza strona wykorzystuje pliki cookies. Pozostając na stronie godzisz się na
+                    ich zapisywanie w Twojej przeglądarce.
+                    <a id="close-cookie-warn">Zamknij ostrzeżenie</a>
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+</footer>

@@ -1,0 +1,31 @@
+<div class="container-shadow gallery-panel">
+
+    <div>
+
+        <div id="galler-no-images" class="alert alert-warning" tal:condition="files is None" tal:content="status"></div>
+
+        <section id="least" tal:condition='files is not None and len(files) > 0'>
+
+             <!-- Least Gallery: Fullscreen Preview -->
+            <div class="least-preview"></div>
+
+            <div id="least-hide"></div>
+
+            <!-- Least Gallery: Thumbnails -->
+            <ul class="least-gallery">
+
+                <li tal:repeat='file files'>
+
+                  <a tal:attributes="href file">
+                    <img tal:attributes="src '%s.thumb' % file;alt file"/>
+                  </a>
+
+                </li>
+
+            </ul>
+
+        </section>
+
+    </div>
+
+</div>

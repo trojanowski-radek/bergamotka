@@ -1,0 +1,65 @@
+<!-- Add event dialog -->
+<div class="modal fade" id="news-edit-dlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+	<div class="modal-dialog">
+		
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edycja aktualności...</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Tytuł:</h4>
+						<input id="news-edit-title" type="text" class="form-control" placeholder="Wpisz tutaj tytuł...">
+					</div>
+				</div>
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Treść:</h4>
+						<textarea id="news-edit-content" class="form-control" rows="5" placeholder="Wpisz tutaj treść..."></textarea>
+					</div>
+				</div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Wybierz ilustrację:</h4>
+                        <h5>Maksymalny rozmiar to 300 x 200 pikseli.</h5>
+
+                        <form id="news-edit-dlg-image-form" action="/news_image_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"></div>
+                                <div>
+                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Wybierz grafikę</span>
+                                    <span class="fileinput-exists">Zmień</span>
+                                    <input type="file" name="..."></span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Usuń</a>
+                                    <input type="button" class="btn btn-default" value="Wyślij">
+                                    </input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <div id="news-edit-image-url-placeholder"></div>
+
+                <div id="news-edit-image-section"></div>
+
+                <div id="news-edit-item-id"></div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<span type="button" class="btn btn-default" data-dismiss="modal">Zamknij</span>
+				<span type="button" class="btn btn-primary" id='news-edit-save-btn'>Zapisz zmiany &raquo;</span>
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

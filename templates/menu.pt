@@ -1,0 +1,36 @@
+<!--NAVBAR--> 
+<div class="navbar navbar-inverse navbar-fixed-top">
+		
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand">BERGAMOTKA</a>
+    </div>
+
+    <div class="navbar-collapse collapse">
+
+        <ul class="nav navbar-nav">
+            <li class="active"><a value="news"><span class='glyphicon glyphicon-comment'></span> Aktualności</a></li>
+            <li><a value="dishes"><span class='glyphicon glyphicon-list-alt'></span> Karta dań</a></li>
+            <li><a value="reservations"><span class='glyphicon glyphicon-pencil'></span> Opieka</a></li>
+            <li><a value="calendar"><span class='glyphicon glyphicon-calendar'></span> Kalendarz</a></li>
+            <li><a value="gallery"><span class='glyphicon glyphicon-film'></span> Galeria</a></li>
+            <li><a value="about"><span class='glyphicon glyphicon-info-sign'></span> O nas</a></li>
+            <li tal:condition="logged_in and 'ADMIN' in logged_in">
+                <a id="toolbar-admin" value='admin'><span class='glyphicon glyphicon-wrench'></span> Administracja</a>
+            </li>
+            <li tal:condition="not logged_in">
+                <a id="toolbar-login" role="button" href="/login"><span class='glyphicon glyphicon-user'></span> Zaloguj</a>
+            </li>
+
+            <li tal:condition="logged_in">
+                <a id="toolbar-logout" role="button" href="/logout"><span class='glyphicon glyphicon-user'></span> Wyloguj</a>
+            </li>
+        </ul>
+
+    </div>
+
+</div>

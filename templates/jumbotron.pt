@@ -1,0 +1,10 @@
+<div class="jumbotron">
+    <div class="row">
+        <img src="../static/images/logo.gif" alt="Bergamotka Cafe Dębica" style="width:100%;margin-bottom:-15px;box-shadow: 0 -90px 50px 6px black;">
+    </div>
+    <!--<div class="row">
+        <div class="col-lg-6">
+            <p><a class="btn btn-primary btn-lg" role="button" id='jumbotron-reservation'><span class='glyphicon glyphicon-pencil'></span> Opieka nad Toim dzieckiem &raquo;</a></p>
+        </div>
+    </div>-->
+</div>

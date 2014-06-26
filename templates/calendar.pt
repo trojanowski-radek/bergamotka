@@ -1,0 +1,9 @@
+<div class='row calendar-panel'>
+    <div class="col-md-12">
+        <div class="row panel panel-default container-shadow" style="padding: 10px">
+            <div id='calendar-div'></div>
+        </div>
+    </div>
+</div>
+
+<div metal:use-macro="load: dialogs/eventedit.pt" />

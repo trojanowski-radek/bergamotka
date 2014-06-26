@@ -1,0 +1,78 @@
+<!-- Add event dialog -->
+<div class="modal fade" id="reservations-edit-dlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+	<div class="modal-dialog">
+		
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edycja rezerwacji...</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Imię i nazwisko:</h4>
+                        <input type="text" name='name' class="form-control" placeholder="Miejsce na Twoje imię i nazwisko..." id='reservations-edit-title'/>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12">
+						<h4>Email:</h4>
+						<input type="email" name='email' class="form-control" placeholder="Miejsce na Twój adres e-mail..." id='reservations-edit-email'/>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="col-md-12">
+						<h4>Telefon:</h4>
+						<input type="phone" class="form-control" placeholder="Miejsce na numer telefonu..." id='reservations-edit-phone' data-mask="999-999-999"/>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="col-md-12">
+						<h4>Data:</h4>
+						<input class="form-control datepicker" placeholder="Wybierz datę..." id='reservations-edit-date' data-mask="9999-99-99"/>
+					</div>
+				</div>
+
+                <div class="row">
+					<div class="col-md-12">
+                        <label for="reservations-edit-time-start" class="col-sm-2 control-label">Od godziny:</label>
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-time'></span></span>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="reservations-edit-time-start" type="time" class="form-control timepicker"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+					<div class="col-md-12">
+                        <label for="reservations-edit-time-end" class="col-sm-2 control-label">Do godziny:</label>
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-time'></span></span>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="reservations-edit-time-end" type="time" class="form-control timepicker"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="reservations-edit-item-id"></div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<span type="button" class="btn btn-default" data-dismiss="modal">Zamknij</span>
+				<span type="button" class="btn btn-primary" id='reservations-edit-save-btn'>Zapisz zmiany &raquo;</span>
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

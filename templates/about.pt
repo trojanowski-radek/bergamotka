@@ -1,0 +1,87 @@
+<div>
+
+    <div class="row panel panel-default container-shadow" style="padding: 30px; text-align: center">
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Kawiarenka Bergamotka</h2><p>to przyjazne miejsce dla DZIECI, MŁODZIEŻY I DOROSŁYCH<br> tu każdy znajdzie coś dobrego dla siebie.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4">
+                <h3>Dzieciom</h3><p>proponujemy świetną zabawę w naszej mini ŚWIETLICY z naszymi animatorami zabaw, zajęcia plastyczne, umuzykalniające, zasad dobrego wychowania savoir vivre.</p>
+            </div>
+            <div class="col-lg-4">
+                <h3>Młodzieży</h3><p>przytulny kącik, w którym można poserfować (dostęp do Wi-Fi),  zjeść smaczną przekąskę lub poczytać dobrą książkę</p>
+            </div>
+            <div class="col-lg-4">
+                <h3>Dorosłym</h3><p>chwilę wytchnienia przy świeżo parzonej aromatycznej kawie, pysznym deserze lub ciastku, w milej atmosferze.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h2>Czym się zajmujemy?</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <p>Działalnością usługową polegająca na prowadzeniu kawiarni - nasza mała gastronomia proponuje między innymi:</p>
+                <p>NAPOJE CIEPŁE: kawa - typu art caffe, herbata - różne rodzaje także z Bergamotką</p>
+                <p>NAPOJE ZIMNE: świeżo wyciskane soki, robione na miejscu koktajle</p>
+                <p>KANAPKI NA CIEPŁO I ZIMNO, DESERY, CIASTA, PRZEKĄSKI, SAŁATKI</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-lg-offset-4">
+                <h2>Organizujemy:</h2>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <p>urodzinki dla dzieci wraz z animacją, komunie, rocznice, chrzciny</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h3>Jesteśmy zgraną kadrą, która nie boi się nowych wyzwań. Mamy predyspozycje oraz przygotowanie zawodowe pozwalające zapewnić naszym klientom najlepszą jakość usług.</h3>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row panel panel-default container-shadow" style="padding: 10px; text-align: center">
+                <h2>Godziny otwarcia:</h2>
+                <div class="col-md-4">
+                    <p>Poniedziałek - piątek:<br>
+                       07:00 - 21:00</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Sobota:<br>
+                       09:00 - 20:00</p>
+                </div>
+                <div class="col-md-4">
+                    <p>Niedziela:<br>
+                       10:00 - 18:00</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class='row'>
+        <div class="col-md-12">
+            <div class="row panel panel-default container-shadow" style="padding: 10; text-align: center">
+                <h2>Gdzie można nas znaleźć:</h2>
+                <p>Lokal znajduje się w centrum miasta przy ul.Słowackiego 8 w siąsiedztwie LO. im. W. Jagiełły</p>
+                <iframe id="about-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1280.9659701396254!2d21.411243513483836!3d50.05010624458349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x473d0a2623a9151b%3A0xca06664bd6a1dc41!2sS%C5%82owackiego+8!5e0!3m2!1spl!2spl!4v1400060403751" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+</div>

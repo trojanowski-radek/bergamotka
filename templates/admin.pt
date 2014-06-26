@@ -1,0 +1,307 @@
+<div class="row admin-panel">
+
+    <div class="container panel container-shadow">
+	
+        <ul class="nav nav-tabs" id="admin-tabs">
+            <li class='active'>
+                <a rel='news' href="#admin-news-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-comment'></span>
+                    <strong> Aktualności</strong>
+                    <span class="badge" tal:condition="newsall.status == True" tal:content="len(newsall.news)"></span>
+                    <span class="badge" tal:condition="newsall.status == False">0</span>
+                </a>
+            </li>
+            <li>
+                <a rel='events' href="#admin-events-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-th'></span>
+                    <strong> Wydarzenia</strong>
+                    <span class="badge" tal:condition='eventsall.status == True' tal:content="len(eventsall.events)"></span>
+                    <span class="badge" tal:condition="eventsall.status == False">0</span>
+                </a>
+            </li>
+            <li>
+                <a rel='reservations' href="#admin-reservations-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-pencil'></span>
+                    <strong> Rezerwacje</strong>
+                    <span class="badge" tal:condition='reservationsall.status == True' tal:content="len(reservationsall.reservations)"></span>
+                    <span class="badge" tal:condition="reservationsall.status == False">0</span>
+                </a>
+            </li>
+            <li>
+                <a rel='reservations-today'  href="#admin-reservations-today-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-pencil'></span>
+                    <strong> Dzisiejsze rezerwacje</strong>
+                    <span class="badge" tal:condition='reservationstoday.status == True' tal:content="len(reservationstoday.reservations)"></span>
+                    <span class="badge" tal:condition="reservationstoday.status == False">0</span>
+                </a>
+            </li>
+            <li>
+                <a rel='dishes' href="#admin-dishes-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-list-alt'></span>
+                    <strong> Karta dań</strong>
+                    <span class="badge" tal:condition='dishesall.status == True' tal:content="len(dishesall.dishes)"></span>
+                    <span class="badge" tal:condition="dishesall.status == False">0</span>
+                </a>
+            </li>
+            <li>
+                <a rel='gallery' href="#admin-gallery-tab" data-toggle="tab">
+                    <span class='glyphicon glyphicon-film'></span>
+                    <strong> Galeria</strong>
+                </a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <div class="tab-pane fade in active" id="admin-news-tab">
+
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+                            <div class="panel-heading"><h2>Menadżer aktualności - zarządzanie aktualnościami.</h2></div>
+                            <div class="panel-body">
+
+                                <div class="table-responsive" id='admin-news-manager-table' tal:condition='newsall.status == True'>
+                                    <table class="table table-hover">
+                                        <tr>
+                                            <th>Numer</th>
+                                            <th>Data</th>
+                                            <th>Tytuł</th>
+                                            <th>Obrazek</th>
+                                            <th>Zawartość</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr tal:repeat='news newsall.news'>
+                                            <td rel="number" tal:content='repeat.news.number' style='font-weight: bolder'></td>
+                                            <td rel="date" tal:content='news.added[0:-7]'></td>
+                                            <td rel="title" tal:content='news.title'></td>
+                                            <td rel="image"><img tal:condition="news.image is not None" class="img-to-enlarge" tal:attributes="src '%s.thumb' % news.image if news.image else None" alt="Brak" style="width: 40px; height: 40px"/></td>
+                                            <td rel="content" tal:content='news.content'></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value news.id" action="edit"><span class='glyphicon glyphicon-edit'></span></button></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value news.id" action="delete"><span class='glyphicon glyphicon-trash'></span></button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary btn-lg" id='news-add-btn' data-dismiss="modal"><span class='glyphicon glyphicon-plus'></span> Dodaj aktualność &raquo;</button>
+                                </div>
+
+                                <div metal:use-macro="load: dialogs/newsadd.pt" />
+                                <div metal:use-macro="load: dialogs/newsedit.pt" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="admin-events-tab">
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+                            <div class="panel-heading"><h2>Menadżer wydarzeń - zarządzanie wydarzeniami.</h2></div>
+                            <div class="panel-body">
+
+                                    <div class="table-responsive" tal:condition='eventsall.status == True'>
+                                        <table class="table table-hover" id='admin-events-manager-table'>
+                                            <tr>
+                                                <th>Numer</th>
+                                                <th>Start</th>
+                                                <th>Koniec</th>
+                                                <th>Tytuł</th>
+                                                <th></th>
+                                                <th></th>
+                                            </tr>
+                                            <tr tal:repeat='event eventsall.events'>
+                                                <td tal:content='repeat.event.number' style='font-weight: bolder'></td>
+                                                <td tal:content='event.date_start'></td>
+                                                <td tal:content='event.date_end'></td>
+                                                <td tal:content='event.title'></td>
+                                                <td><button type="button" class="close" aria-hidden="true" tal:attributes="value event.id" action="edit"><span class='glyphicon glyphicon-edit'></span></button></td>
+                                                <td><button type="button" class="close" aria-hidden="true" tal:attributes="value event.id" action="delete"><span class='glyphicon glyphicon-trash'></span></button></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                    <div class="col-md-2">
+                                        <button type="button" class="btn btn-primary btn-lg" id='event-add-btn' data-dismiss="modal"><span class='glyphicon glyphicon-plus'></span> Dodaj wydarzenie &raquo;</button>
+                                    </div>
+
+                                    <div metal:use-macro="load: dialogs/eventadd.pt" />
+                                    <div metal:use-macro="load: dialogs/eventedit.pt" />
+
+                                </div>
+                          </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="admin-reservations-tab">
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+                            <div class="panel-heading"><h2>Menadżer rezerwacji - zarządzanie rezerwacjami.</h2></div>
+                            <div class="panel-body">
+
+                                <div class="table-responsive" tal:condition='reservationsall.status == True'>
+                                    <table class="table table-hover" id='admin-reservations-manager-table'>
+                                        <tr>
+                                            <th>Numer</th>
+                                            <th>Start</th>
+                                            <th>Koniec</th>
+                                            <th>Tytuł</th>
+                                            <th>E-mail</th>
+                                            <th>Telefon</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr tal:repeat='reservation reservationsall.reservations'>
+                                            <td tal:content='repeat.reservation.number' style='font-weight: bolder'></td>
+                                            <td rel="date_start" tal:content='reservation.date_start'></td>
+                                            <td rel="date_end" tal:content='reservation.date_end'></td>
+                                            <td rel="title" tal:content='reservation.title'></td>
+                                            <td rel="email" tal:content='reservation.email'></td>
+                                            <td rel="phone" tal:content='reservation.phone'></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value reservation.id" action="edit"><span class='glyphicon glyphicon-edit'></span></button></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value reservation.id" action="delete"><span class='glyphicon glyphicon-trash'></span></button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div metal:use-macro="load: dialogs/reservationsedit.pt" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="admin-reservations-today-tab">
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+                            <div class="panel-heading"><h2>Menadżer dzisiejszych rezerwacji - zarządzanie dzisiejszymi rezerwacjami.</h2></div>
+                            <div class="panel-body">
+
+                                <div tal:condition="reservationstoday.status is False">
+                                    <h3>Brak rezerwacji dokonanych na dzień dzisiejszy.</h3>
+                                </div>
+
+                                <div class="table-responsive" tal:condition='reservationstoday.status is True'>
+                                    <table class="table table-hover" id='admin-reservations-today-manager-table'>
+                                        <tr>
+                                            <th>Numer</th>
+                                            <th>Start</th>
+                                            <th>Koniec</th>
+                                            <th>Tytuł</th>
+                                            <th>E-mail</th>
+                                            <th>Telefon</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr tal:repeat='reservation reservationstoday.reservations'>
+                                            <td tal:content='repeat.reservation.number' style='font-weight: bolder'></td>
+                                            <td tal:content='reservation.date_start'></td>
+                                            <td tal:content='reservation.date_end'></td>
+                                            <td tal:content='reservation.title'></td>
+                                            <td tal:content='reservation.email'></td>
+                                            <td tal:content='reservation.phone'></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value reservation.id" action="edit"><span class='glyphicon glyphicon-edit'></span></button></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value reservation.id" action="delete"><span class='glyphicon glyphicon-trash'></span></button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="admin-dishes-tab">
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+                            <div class="panel-heading"><h2>Menadżer karty dań - zarządzanie pozycjami na karcie dań.</h2></div>
+                            <div class="panel-body">
+
+                                <div tal:condition="dishesall.status is False">
+                                    <h3>Brak pozycji na karcie dań</h3>
+                                </div>
+
+                                <div class="table-responsive" tal:condition='dishesall.status is True'>
+                                    <table class="table table-hover" id='admin-dishes-manager-table'>
+                                        <tr>
+                                            <th>Numer</th>
+                                            <th>Obrazek</th>
+                                            <th>Tytuł</th>
+                                            <th>Składniki</th>
+                                            <th>Cena</th>
+                                            <th>Typ</th>
+                                            <th></th>
+                                            <th></th>
+                                        </tr>
+                                        <tr tal:repeat='dish dishesall.dishes'>
+                                            <td rel="number" tal:content='repeat.dish.number' style='font-weight: bolder'></td>
+                                            <td rel="image"><img class="img-to-enlarge" tal:condition="dish.image is not None" tal:attributes="src '%s.thumb' % dish.image" alt="Brak" style="width: 40px; height: 40px"/></td>
+                                            <td rel="title" tal:content='dish.title'></td>
+                                            <td rel="ingredients" tal:content='dish.ingredients'></td>
+                                            <td rel="price" tal:content='dish.price'></td>
+                                            <td rel="type" tal:content='dish.type'></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value dish.id" action="edit"><span class='glyphicon glyphicon-edit'></span></button></td>
+                                            <td><button type="button" class="close" aria-hidden="true" tal:attributes="value dish.id" action="delete"><span class='glyphicon glyphicon-trash'></span></button></td>
+                                        </tr>
+                                    </table>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <button type="button" class="btn btn-primary btn-lg" id='dishes-add-btn' data-dismiss="modal"><span class='glyphicon glyphicon-plus'></span> Dodaj danie &raquo;</button>
+                                </div>
+
+                                <div metal:use-macro="load: dialogs/dishesadd.pt" />
+                                <div metal:use-macro="load: dialogs/dishesedit.pt" />
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="admin-gallery-tab">
+
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default">
+
+                            <div class="panel-heading"><h2>Menadżer galerii - zarządzanie grafikami.</h2></div>
+                            <div class="panel-body">
+                                <form id="admin-gallery-add" action="/gallery_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"></div>
+                                        <div>
+                                            <span class="btn btn-default btn-file"><span class="fileinput-new">Wybierz grafikę</span>
+                                            <span class="fileinput-exists">Zmień</span>
+                                            <input type="file" name="..."></span>
+                                            <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Usuń</a>
+                                            <input type="button" class="btn btn-default" value="Wyślij">
+                                            </input>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="row ajax-loading">
+                                    <div class="col-lg-4">
+                                        <div><h3>Proszę czekać - trwa wczytywanie...</h3></div>
+                                        <div class="loading-indication"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,53 @@
+<div class="row dishes-panel">
+
+    <div class="col-md-12">
+
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="dishes-tab">
+                <div class='row'>
+                    <div class="col-md-12">
+                        <div class="row panel panel-default container-shadow">
+                            <div class="panel-heading"><h2>Karta dań</h2></div>
+                            <div class="panel-body">
+
+                                <div tal:condition="status is False">
+                                    <h3>Brak pozycji na karcie dań</h3>
+                                </div>
+
+                                <div tal:condition='status is True' tal:repeat="dish_type dishesall">
+
+                                    <h3 tal:content="dish_type"></h3>
+
+                                    <div class="table-responsive">
+                                        <table class="table table-hover">
+                                            <tr>
+                                                <th>Numer</th>
+                                                <th></th>
+                                                <th>Nazwa</th>
+                                                <th>Składniki</th>
+                                                <th>Cena</th>
+                                            </tr>
+                                            <tr tal:repeat='dish dishesall[dish_type]'>
+                                                <td tal:content='repeat.dish.number' style='font-weight: bolder; width: 5%'></td>
+                                                <td style="width: 5%"><img class="img-to-enlarge" tal:condition="dish.image is not None" tal:attributes="src '%s.thumb' % dish.image" alt="Brak" style="width: 40px; height: 40px"/></td>
+                                                <td tal:content='dish.title' style="font-weight: 800; font-size: large; width: 25%"></td>
+                                                <td tal:content='dish.ingredients' style="width: 55%"></td>
+                                                <td tal:content='"%s PLN" % str(dish.price)' style="width: 10%"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

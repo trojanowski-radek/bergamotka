@@ -1,0 +1,99 @@
+<!-- Add event dialog -->
+<div class="modal fade" id="dishes-edit-dlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+	<div class="modal-dialog">
+		
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edycja pozycji na karcie dań...</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<div class="row">
+                    <div class="col-md-2">
+                        <h4>Tytuł:</h4>
+                    </div>
+					<div class="col-md-10">
+						<input id="dishes-edit-title" type="text" class="form-control" placeholder="Wpisz tutaj tytuł...">
+					</div>
+				</div>
+				
+				<div class="row">
+                    <div class="col-md-2">
+                        <h4>Składniki:</h4>
+                    </div>
+					<div class="col-md-10">
+						<textarea id="dishes-edit-ingredients" class="form-control" rows="4" placeholder="Wpisz tutaj składniki..." style="margin-bottom: 5px"></textarea>
+					</div>
+				</div>
+
+                <div class="row">
+                    <div class="col-md-2">
+                        <h4>Cena:</h4>
+                    </div>
+					<div class="col-md-10">
+						<input id="dishes-edit-price" type="text" class="form-control" placeholder="Wpisz tutaj cenę...">
+					</div>
+				</div>
+
+                <div class="row">
+
+                    <div class="col-md-2">
+                        <h4>Typ:</h4>
+                    </div>
+
+					<div class="col-md-10">
+
+                        <select id="dishes-edit-type" class="form-control">
+                            <option>Zupy</option>
+                            <option>Dania główne</option>
+                            <option>Przekąski</option>
+                            <option>Sałatki</option>
+                            <option>Desery</option>
+                            <option>Napoje</option>
+                        </select>
+
+					</div>
+				</div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h4>Wybierz ilustrację:</h4>
+                        <h5>Maksymalny rozmiar to 300 x 200 pikseli.</h5>
+
+                        <form id="dishes-edit-dlg-image-form" action="/dishes_image_upload" method="post" accept-charset="utf-8" enctype="multipart/form-data">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-preview thumbnail" data-trigger="fileinput" style="width: 300px; height: 200px;"></div>
+                                <div>
+                                    <span class="btn btn-default btn-file"><span class="fileinput-new">Wybierz grafikę</span>
+                                    <span class="fileinput-exists">Zmień</span>
+                                    <input type="file" name="..."></span>
+                                    <a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Usuń</a>
+                                    <input type="button" class="btn btn-default" value="Wyślij">
+                                    </input>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div id="dishes-edit-image-url-placeholder"></div>
+
+                <div id="dishes-edit-image-section"></div>
+
+                <div id="dishes-edit-item-id"></div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<span type="button" class="btn btn-default" data-dismiss="modal">Zamknij</span>
+				<span type="button" class="btn btn-primary" id='dishes-edit-save-btn'>Zapisz zmiany &raquo;</span>
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

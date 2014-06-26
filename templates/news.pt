@@ -1,0 +1,59 @@
+<div class="row panel panel-default container-shadow news-row" tal:condition='news is not None and len(news) > 0' tal:repeat='item news'>
+
+	<article class="news-cell" tal:attributes="class 'col-lg-6' if item.image is not None and len(item.image) > 0 else 'col-lg-12'">
+
+        <div class="caption">
+            <h1 tal:content='item.title'></h1>
+
+            <p tal:condition="len(item.content) >= 300" tal:content="item.content[:300] + '...'"></p>
+            <p tal:condition="len(item.content) < 300" tal:content='item.content'></p>
+
+            <p class="text-right" tal:content="'Dodano dnia: '+item.added[:-10]"></p>
+
+            <div tal:condition="len(item.content) >= 300">
+
+                <button class="btn btn-primary btn-sm" data-toggle="modal" tal:attributes="data-target '#news-details-%s'%repeat.item.number">Czytaj całość &raquo;</button>
+
+                <div class="modal fade" tal:attributes="id 'news-details-%s'%repeat.item.number; aria-labelledby '#news-details-label-%s'%repeat.item.number" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                <h4 class="modal-title" tal:attributes="id 'news-details-label-%s'%repeat.item.number" tal:content="item.title"></h4>
+                            </div>
+                            <div class="centered" tal:condition="item.image is not None"><img class="news-image" tal:attributes="src '%s.thumb' % item.image" alt=""/></div>
+                            <div class="modal-body" tal:content="item.content">
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </div>
+
+        </div>
+
+    </article>
+
+    <div class="col-lg-6 news-image-container" tal:condition="item.image is not None and len(item.image) > 0">
+        <figure>
+            <img tal:attributes="src '%s.thumb' % item.image; alt item.title" />
+        </figure>
+    </div>
+
+</div>
+
+<div class="row panel panel-default" tal:condition='events is not None and len(events) > 0'>
+	
+	<div class="panel-heading">
+        <div style="font-size: large">NADCHODZĄCE WYDARZENIA:</div>
+    </div>
+	
+	<div class="col-md-2 alert news-event" tal:repeat='item events'>
+		<p class='text-center'><strong tal:content='item.date_start[:-3]'></strong></p>
+		<p class='text-center'><strong tal:content='item.title'></strong></p>
+	</div>
+		
+</div>

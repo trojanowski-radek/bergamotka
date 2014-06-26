@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl" xmlns:tal="http://xml.zope.org/namespaces/tal">
+
+	<head>
+		
+		<meta charset="utf-8">
+			
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	    <meta name="description" content="Bergamotka Cafe Dębica. Kawiarnia dla dzieci i dorosłych." />
+	    <meta name="author" content="Radosław Trojanowski">
+	
+	    <title>Bergamotka Café - Dębica</title>
+
+            <link href='http://fonts.googleapis.com/css?family=Lobster&amp;subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=PT+Sans&amp;subset=latin-ext,latin' rel='stylesheet' type='text/css'>
+	      
+	    <link rel="icon" href="${request.static_url('booking:static/images/favicon.ico')}" sizes="16x16" />
+	    <link rel="shortcut icon" href="${request.static_url('booking:static/images/favicon.ico')}" type="image/x-icon" />
+        <link rel="bookmark icon" href="${request.static_url('booking:static/images/favicon.ico')}" />
+		
+		<div metal:use-macro="load: libraries/stylesheets.pt" />
+	    
+	</head>
+	
+	<body>
+
+        <div metal:use-macro="load: menu.pt" />
+
+        <div id="wrap">
+
+            <div metal:use-macro="load: jumbotron.pt" />
+
+            <div class="container">
+
+                <div id="fb-plugin">
+                    <iframe src="https://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Ffacebook.com%2FZespolTancaBrzuchaWRzeszowieGussel&width=245&colorscheme=light&show_faces=true&border_color=white&connections=12&stream=false&header=false&height=290" scrolling="no" frameborder="0" scrolling="no" style="border: white; overflow: hidden; height: 290px; width: 245px;background:#fafafa;"></iframe>
+                </div>
+
+                <div id="main-content">
+                    <div metal:use-macro="load: news.pt" />
+                </div>
+
+            </div>
+
+            <div id="push"></div>
+
+        </div>
+
+        <div metal:use-macro="load: footer.pt" />
+
+        <div metal:use-macro="load: libraries/javascripts.pt" />
+
+        <script>
+          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+          ga('create', 'UA-51829695-1', 'bergamotkadebica.pl');
+          ga('require', 'displayfeatures');
+          ga('send', 'pageview');
+        </script>
+
+	</body>
+	
+</html>

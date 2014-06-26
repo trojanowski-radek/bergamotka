@@ -1,0 +1,93 @@
+<div class='row'>
+    <div class="col-md-12">
+        <div class="row panel panel-default container-shadow" style="padding: 10px">
+
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h3>Oferujemy godzinową opiekę nad dziećmi.</h3>
+                    <p>W czasie gdy potrzebujesz załatwić drobne sprawy zapewnimy Twojemu dziecku wspaniałą zabawę pod czujnym okiem wykwalifikowanego personelu.</p>
+                </div>
+            </div>
+
+            <form class="form-horizontal cmxform" role="form" id='reservations-form' style="padding-top: 20px;">
+
+                <div class="form-group">
+                    <label for="reservation-title" class="col-sm-2 control-label">Imię i nazwisko</label>
+                    <div class="col-sm-6">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-user'></span></span>
+                            <input type="text" name='name' class="form-control" placeholder="Miejsce na Twoje imię i nazwisko..." id='reservation-title'/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reservation-email" class="col-sm-2 control-label">E-mail</label>
+                    <div class="col-sm-6">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-envelope'></span></span>
+                            <input type="email" name='email' class="form-control" placeholder="Miejsce na Twój adres e-mail..." id='reservation-email'/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="reservation-phone" class="col-sm-2 control-label">Telefon</label>
+                    <div class="col-sm-6">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-earphone'></span></span>
+                            <input type="phone" class="form-control" placeholder="Miejsce na numer telefonu..." id='reservation-phone' data-mask="999-999-999"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="reservation-date" class="col-sm-2 control-label">Data</label>
+                    <div class="col-sm-2">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-calendar'></span></span>
+                            <input class="form-control datepicker" placeholder="Wybierz datę..." id='reservation-date' data-mask="9999-99-99"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                    <label for="reservation-time-start" class="col-sm-2 control-label">Od godziny</label>
+                    <div class="col-sm-2">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-time'></span></span>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="reservation-time-start" type="time" class="form-control timepicker"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label for="reservation-time-end" class="col-sm-2 control-label">Do godziny</label>
+                    <div class="col-sm-2">
+                        <div class='input-group'>
+                            <span class="input-group-addon"><span class='glyphicon glyphicon-time'></span></span>
+                            <div class="input-append bootstrap-timepicker">
+                                <input id="reservation-time-end" type="time" class="form-control timepicker"/>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id='reservation-alert-container'></div>
+
+                <p class='text-center'>
+                    <button type="button" class="btn btn-primary" id='reservations-add-btn' data-dismiss="modal"><span class='glyphicon glyphicon-ok'></span> Złóż rezerwację &raquo;</button>
+                </p>
+
+            </form>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,53 @@
+<!-- Add event dialog -->
+<div class="modal fade" id="event-edit-dlg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	
+	<div class="modal-dialog">
+		
+		<div class="modal-content">
+			
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h4 class="modal-title" id="myModalLabel">Edytuj istniejące wydarzenie...</h4>
+			</div>
+			
+			<div class="modal-body">
+				
+				<div class="row">
+					<div class="col-md-6">
+						<h4>Tytuł:</h4>
+						<input id="calendar-edit-event-title" type="text" class="form-control" placeholder="Wpisz tutaj tytuł...">
+					</div>
+					<div class="col-md-6">
+						<h4>Data:</h4>
+						<input id="calendar-edit-event-date" type="text" class="form-control datepicker" placeholder="Wybierz datę...">
+					</div>
+				</div>
+				
+				<div class="row">
+					
+					<div class="col-md-6">
+						<h4>Czas rozpoczęcia:</h4>
+						<div class="input-append bootstrap-timepicker">
+							<input id="calendar-edit-event-time-start" type="text" class="form-control timepicker">
+						</div>
+					</div>
+					
+					<div class="col-md-6">
+						<h4>Czas zakończenia:</h4>
+						<div class="input-append bootstrap-timepicker">
+							<input id="calendar-edit-event-time-end" type="text" class="form-control timepicker">
+						</div>
+					</div>
+					
+				</div>
+				
+			</div>
+			
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Zamknij</button>
+				<button type="button" class="btn btn-primary" id='calendar-edit-event-save-btn' data-dismiss="modal">Zapisz wydarzenie &raquo;</button>
+			</div>
+			
+		</div><!-- /.modal-content -->
+	</div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
